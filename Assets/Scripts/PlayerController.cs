@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //get horizontal and forward inputs for steering
-    float horizontalInput;
-    float forwardInput;
+    private float horizontalInput;
+    private float forwardInput;
     //allows speed to be edited form inspector
     public float speed = 5.0f;
     public float turnSpeed = 5.0f;
