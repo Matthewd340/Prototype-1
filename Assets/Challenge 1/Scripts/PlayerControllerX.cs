@@ -7,11 +7,12 @@ public class PlayerControllerX : MonoBehaviour
     public float speed = 5.0f;
     public float rotationSpeed = 10.0f;
     private float verticalInput;
+    public AudioSource collideSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        collideSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,5 +26,10 @@ public class PlayerControllerX : MonoBehaviour
 
         // tilt the plane up/down based on up/down arrow keys
         transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+    }
+
+    private void OnCollisionEnter (Collision collision)
+    {
+        collideSound.Play();
     }
 }
