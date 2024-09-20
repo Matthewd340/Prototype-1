@@ -7,6 +7,7 @@ public class PlayerControllerX : MonoBehaviour
     public float speed = 5.0f;
     public float rotationSpeed = 10.0f;
     private float verticalInput;
+    public GameObject plane;
     public AudioSource collideSound;
 
     // Start is called before the first frame update
@@ -30,6 +31,6 @@ public class PlayerControllerX : MonoBehaviour
 
     private void OnCollisionEnter (Collision collision)
     {
-        collideSound.Play();
+        GameObject.Destroy(plane);
     }
 }
