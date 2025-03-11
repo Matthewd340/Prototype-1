@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //get horizontal and forward inputs for steering
-    private float horizontalInput;
-    private float forwardInput;
-    //allows speed to be edited form inspector
-    public float speed = 5.0f;
-    public float turnSpeed = 5.0f;
-    
+    public float speed = 5;
+    public float turnSpeed = 50;
+    public float horizontalInput;
+    private float verticalInput;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        //Get axes for vehicle control
         horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
-        // Moves the vehicle
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        verticalInput = Input.GetAxis("Vertical");
+        // Moves the car forward
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
+        // Turns the car on the Y axis
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
-        
     }
 }
