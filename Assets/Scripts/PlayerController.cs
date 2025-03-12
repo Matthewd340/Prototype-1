@@ -24,5 +24,6 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
         // Turns the car on the Y axis
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
+        
     }
 }
