@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera mainCamera;
-    public Camera firstPersonCamera;
+    public Camera leftCamera;
+    public Camera rightCamera;
+    public Camera leftFirstPersonCamera;
+    public Camera rightFirstPersonCamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,32 +17,62 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.RightShift))
       {
-        SwapCameras();
+        SwapLeftCameras();
+      }      
+      
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+      {
+        SwapRightCameras();
       }
     }
 
-    void SwapCameras()
+    void SwapLeftCameras()
     {
-        if (mainCamera.enabled == true)
+        if (leftCamera.enabled == true)
       {
-        mainCamera.enabled = false;
+        leftCamera.enabled = false;
       }
         
-        else if (mainCamera.enabled == false)
+        else if (leftCamera.enabled == false)
       {
-        mainCamera.enabled = true;
+        leftCamera.enabled = true;
       }
 
-      if (firstPersonCamera.enabled == true)
+      if (leftFirstPersonCamera.enabled == true)
       {
-        firstPersonCamera.enabled = false;
+        leftFirstPersonCamera.enabled = false;
       }
 
-        else if (firstPersonCamera.enabled == false)
+        else if (leftFirstPersonCamera.enabled == false)
       {
-        firstPersonCamera.enabled = true;
+        leftFirstPersonCamera.enabled = true;
+      }
+
+
+    }
+
+    void SwapRightCameras()
+    {
+        if (rightCamera.enabled == true)
+      {
+        rightCamera.enabled = false;
+      }
+        
+        else if (rightCamera.enabled == false)
+      {
+        rightCamera.enabled = true;
+      }
+
+      if (rightFirstPersonCamera.enabled == true)
+      {
+        rightFirstPersonCamera.enabled = false;
+      }
+
+        else if (rightFirstPersonCamera.enabled == false)
+      {
+        rightFirstPersonCamera.enabled = true;
       }
 
     }
