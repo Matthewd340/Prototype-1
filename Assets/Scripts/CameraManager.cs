@@ -21,11 +21,13 @@ public class CameraManager : MonoBehaviour
       {
         SwapLeftCameras();
       }      
+      //toggles cameras for player 1
       
         else if (Input.GetKeyDown(KeyCode.LeftShift))
       {
         SwapRightCameras();
       }
+      //toggles cameras for player 2
     }
 
     void SwapLeftCameras()
@@ -49,6 +51,7 @@ public class CameraManager : MonoBehaviour
       {
         leftFirstPersonCamera.enabled = true;
       }
+      //enables and disables cameras accorind to which ones are active and inactive for P1
 
 
     }
@@ -74,7 +77,7 @@ public class CameraManager : MonoBehaviour
       {
         rightFirstPersonCamera.enabled = true;
       }
-
+      //enables and disables cameras accorind to which ones are active and inactive for P2
     }
     
 }
